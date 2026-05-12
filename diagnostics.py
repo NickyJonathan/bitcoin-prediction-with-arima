@@ -2,7 +2,7 @@
 diagnostics.py
 Diagnostik residual: Ljung-Box, Jarque-Bera, statistik deskriptif.
 
-Sesuai Subbab 2.4.10 (teori) dan 3.5.6 (metodologi) — Tahap Pemeriksaan Diagnostik.
+Sesuai Subbab 2.4.10 (teori) dan 3.5.6 (metodologi) - Tahap Pemeriksaan Diagnostik.
 """
 from typing import List
 
@@ -60,8 +60,8 @@ def ljung_box_multi(residuals: np.ndarray, lags: List[int] = None) -> pd.DataFra
                 "Lag": h,
                 "Statistik Q": q_stat,
                 "p-value": p_val,
-                "Kesimpulan (α=0.05)": (
-                    "Tidak berautokorelasi ✓" if p_val > 0.05 else "Berautokorelasi ✗"
+                "Kesimpulan (alpha=0.05)": (
+                    "Tidak berautokorelasi" if p_val > 0.05 else "Berautokorelasi"
                 ),
             }
         )
@@ -86,9 +86,9 @@ def jarque_bera_test(residuals: np.ndarray) -> dict:
         "Kurtosis": float(kurtosis(r, fisher=False)),
         "is_normal": p_value > 0.05,
         "conclusion": (
-            "NORMAL (H₀ tidak ditolak, α=0.05)"
+            "Residual berdistribusi normal (H0 tidak ditolak, alpha=0.05)"
             if p_value > 0.05
-            else "TIDAK NORMAL (H₀ ditolak — residual fat-tailed)"
+            else "Residual tidak berdistribusi normal (H0 ditolak; residual fat-tailed)"
         ),
     }
 

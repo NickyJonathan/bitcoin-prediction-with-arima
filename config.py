@@ -56,19 +56,19 @@ MAPE_CATEGORIES = [
 # ============================================================
 # Mode Model
 # ============================================================
-MODE_PRETRAINED = "Pre-trained (arima_model.pkl)"
-MODE_MANUAL = "Train Ulang Manual"
-MODE_AUTO = "Auto Grid Search (AIC)"
+MODE_PRETRAINED = "Model tersimpan"
+MODE_MANUAL = "Latih manual"
+MODE_AUTO = "Pencarian otomatis (AIC)"
 MODE_OPTIONS = [MODE_PRETRAINED, MODE_MANUAL, MODE_AUTO]
 
 # ============================================================
 # Visualisasi
 # ============================================================
-COLOR_PRIMARY = "#1d4ed8"      # biru
-COLOR_SECONDARY = "#f97316"    # oranye
-COLOR_ACTUAL = "#16a34a"       # hijau
-COLOR_GRID = "#94a3b8"         # abu-abu
-COLOR_DANGER = "#dc2626"       # merah
-COLOR_CI_FILL = "rgba(249, 115, 22, 0.18)"  # oranye transparan
+COLOR_PRIMARY = "#2563eb"      # blue
+COLOR_SECONDARY = "#d97706"    # amber
+COLOR_ACTUAL = "#059669"       # green
+COLOR_GRID = "#cbd5e1"         # neutral grid
+COLOR_DANGER = "#dc2626"       # red
+COLOR_CI_FILL = "rgba(217, 119, 6, 0.16)"
 
 PLOT_TEMPLATE = "plotly_white"

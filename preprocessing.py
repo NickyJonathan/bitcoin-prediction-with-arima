@@ -2,7 +2,7 @@
 preprocessing.py
 Pra-pemrosesan data: pembagian train/test sesuai metodologi.
 
-Sesuai Subbab 3.5.2 (Pra-pemrosesan Data) — KDD Tahap 2.
+Sesuai Subbab 3.5.2 (Pra-pemrosesan Data) - KDD Tahap 2.
 """
 from typing import Tuple
 
@@ -44,8 +44,8 @@ def get_split_summary(train: pd.Series, test: pd.Series) -> dict:
     total = len(train) + len(test)
     return {
         "Total Observasi": total,
-        "Data Latih (Train)": f"{len(train)} ({len(train)/total*100:.1f}%)",
-        "Periode Train": f"{train.index.min().date()} → {train.index.max().date()}",
-        "Data Uji (Test)": f"{len(test)} ({len(test)/total*100:.1f}%)",
-        "Periode Test": f"{test.index.min().date()} → {test.index.max().date()}",
+        "Data Latih": f"{len(train)} ({len(train)/total*100:.1f}%)",
+        "Periode Data Latih": f"{train.index.min().date()} sampai {train.index.max().date()}",
+        "Data Uji": f"{len(test)} ({len(test)/total*100:.1f}%)",
+        "Periode Data Uji": f"{test.index.min().date()} sampai {test.index.max().date()}",
     }

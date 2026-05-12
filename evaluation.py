@@ -2,7 +2,7 @@
 evaluation.py
 Evaluasi akurasi prediksi: MAE, RMSE, MAPE + perbandingan dengan naive baseline.
 
-Sesuai Subbab 2.5 (teori) dan 3.5.7 (metodologi) — Tahap Evaluasi Pola.
+Sesuai Subbab 2.5 (teori) dan 3.5.7 (metodologi) - Tahap Evaluasi Pola.
 """
 import numpy as np
 import pandas as pd
@@ -118,16 +118,16 @@ def compare_with_naive(
 
     if u_stat < 1:
         interp = (
-            "ARIMA LEBIH BAIK dari naive baseline. "
-            "Model berhasil menangkap struktur temporal yang dapat dieksploitasi."
+            "ARIMA lebih baik dari baseline sederhana. "
+            "Model menangkap struktur temporal yang tidak tercakup oleh baseline sederhana."
         )
     elif u_stat > 1:
         interp = (
-            "ARIMA TIDAK lebih baik dari naive baseline. "
-            "Data sangat mendekati perilaku random walk — konsisten dengan Random Walk Hypothesis."
+            "ARIMA belum lebih baik dari baseline sederhana. "
+            "Pola data mendekati perilaku random walk pada periode evaluasi ini."
         )
     else:
-        interp = "ARIMA SETARA dengan naive baseline."
+        interp = "ARIMA setara dengan baseline sederhana."
 
     return {
         "model": model_eval,
