@@ -69,22 +69,47 @@ def apply_custom_style() -> None:
     st.markdown(
         """
         <style>
-        html, body, [class*="css"]  {
+        :root {
+            color-scheme: light;
+        }
+        html, body, [data-testid="stAppViewContainer"]  {
             font-family: 'Segoe UI', 'Inter', 'Calibri', sans-serif;
             color: #111827;
             letter-spacing: 0;
         }
         [data-testid="stAppViewContainer"] {
             background: #f6f8fb;
+            color: #111827;
+        }
+        [data-testid="stHeader"] {
+            background: rgba(246, 248, 251, 0.96);
         }
         .main .block-container {
             max-width: 1200px;
             padding-top: 2rem;
             padding-bottom: 2.5rem;
         }
-        [data-testid="stSidebar"] {
+        [data-testid="stSidebar"],
+        [data-testid="stSidebar"] > div,
+        [data-testid="stSidebarContent"] {
             background: #ffffff;
+            color: #111827;
             border-right: 1px solid #e5e7eb;
+        }
+        [data-testid="stSidebar"] h1,
+        [data-testid="stSidebar"] h2,
+        [data-testid="stSidebar"] h3,
+        [data-testid="stSidebar"] p,
+        [data-testid="stSidebar"] label,
+        [data-testid="stSidebar"] span,
+        [data-testid="stSidebar"] small,
+        [data-testid="stSidebar"] [data-testid="stMarkdownContainer"],
+        [data-testid="stSidebar"] [data-testid="stWidgetLabel"] {
+            color: #111827 !important;
+        }
+        [data-testid="stSidebar"] [data-testid="stCaptionContainer"],
+        [data-testid="stSidebar"] small {
+            color: #526070 !important;
         }
         h1, h2, h3 {
             color: #111827;
@@ -226,6 +251,9 @@ def apply_custom_style() -> None:
             background: #1f4e79;
             color: #ffffff;
             font-weight: 600;
+        }
+        .stButton > button * {
+            color: #ffffff !important;
         }
         .stButton > button:hover {
             border-color: #173c5f;
